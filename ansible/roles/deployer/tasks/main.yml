@@ -1,0 +1,13 @@
+---
+- name: Checkout application repository
+  git:
+    repo: "{{ repo_url }}"
+    dest: "{{ deploy_dir }}"
+    version: "{{ repo_version | default('main') }}"
+
+- name: Deploy application with Helm
+  command: >
+    helm upgrade --install {{ release_name }} {{ chart_path }}
+    --set image.tag={{ image_tag }}
+  args:
+    chdir: "{{ deploy_dir }}"

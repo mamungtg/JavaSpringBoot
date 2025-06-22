@@ -1,0 +1,7 @@
+- hosts: cicd
+  become: yes
+  roles:
+    - docker
+    - jenkins
+    - kubernetes
+    - deployer
