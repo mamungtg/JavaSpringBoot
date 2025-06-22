@@ -78,3 +78,21 @@ Next Steps
     Consider adding instructions on how to run your Python automation scripts once the backend is in place.
 
 This workflow establishes a standard approach for delivering REST APIs with Java Spring Boot, storing data in MySQL, and automating deployment tasks with Python.
+
+## Ansible CI/CD Playbooks
+
+The `ansible` directory contains example playbooks used to provision a CI/CD
+pipeline. These playbooks install Docker, Jenkins, kubectl and Helm on a target
+host and deploy the application using Helm charts.
+
+### Running the Playbooks
+
+1. Edit `ansible/inventory/hosts.yml` and update the `cicd` host details.
+2. Run the site playbook:
+
+```bash
+ansible-playbook -i ansible/inventory/hosts.yml ansible/site.yml
+```
+
+Variables for the deployment role (repository URL, chart path, etc.) can be
+customized in `ansible/roles/deployer/defaults/main.yml`.

@@ -1,0 +1,10 @@
+---
+- name: Install kubectl
+  apt:
+    name: kubectl
+    state: present
+
+- name: Install Helm
+  snap:
+    name: helm
+    classic: yes

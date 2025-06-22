@@ -1,0 +1,6 @@
+---
+repo_url: https://github.com/example/JavaSpringBoot.git
+deploy_dir: /opt/app
+release_name: java-springboot
+chart_path: helm/java-springboot
+image_tag: latest
